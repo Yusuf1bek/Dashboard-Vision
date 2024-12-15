@@ -1,11 +1,11 @@
-import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
-import { useStore } from 'zustand'
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useStore } from '../../zustand/index';
 
 const Auth = () => {
-    const token = true
-    
-  return token ? <Outlet/> : <Navigate replace to={"/login"}/>
-}
+  const token = useStore((state) => state.token);
 
-export default Auth
+  return token ? <Outlet /> : <Navigate replace to="/login" />;
+};
+
+export default Auth;

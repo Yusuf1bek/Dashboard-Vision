@@ -4,6 +4,7 @@ import Dashboard from '@/pages/Dashboard/Dashboard/Dashboard'
 import MainDashboard from '@/pages/Dashboard/MainDashboard'
 import Rtl from '@/pages/Dashboard/Rtl/Rtl'
 import Table from '@/pages/Dashboard/Tables/Table'
+import Login from '@/pages/Login/Login'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
@@ -12,14 +13,14 @@ const Router = () => {
     <>
         <Routes>
             <Route path='/' element={<Auth/>}>
-              <Route path='/' element={<MainDashboard/>}>
+              <Route path='main' element={<MainDashboard/>}>
                 <Route path='dashboard' element={<Dashboard/>}/>
                 <Route path='table' element={<Table/>}/>
                 <Route path='biling' element={<Biling/>}/>
                 <Route path='rtl' element={<Rtl/>}/>
               </Route>
             </Route>
-            {/* <Route path='login' element={<Login/>}/> */}
+            <Route path='login' element={<Login/>}/>
         </Routes>
     </>
   )
